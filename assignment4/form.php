@@ -1,8 +1,8 @@
-<?php
-  session_start();
-?>
+<?php session_start();?>
+
 <?php
 if (isset($_POST["generate-pdf"])) {
+  //Including the fpdf package.
   require("../fpdf/fpdf.php");
   $pdf = new FPDF();
   $pdf->AddPage();
@@ -18,6 +18,7 @@ if (isset($_POST["generate-pdf"])) {
   $pdf->Cell(70, 30, "Email Address ", 1, 0, 'C');
   $pdf->Cell(0, 30, $_SESSION["email"], 1, 1, 'C');
   $pdf->Cell(0, 30, "Marks Details", 1, 1, 'C');
+
   if (isset($_SESSION['text-area'])) {
     //Entering the marks in the array
     $sub_marks = explode("\n", $_SESSION["text-area"]);
@@ -34,10 +35,10 @@ if (isset($_POST["generate-pdf"])) {
     }
   }
   $file = time() . '.pdf';
-  // $pdf->Output($file,'D');
   $pdf->Output($file, 'I');
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +61,6 @@ if (isset($_POST["generate-pdf"])) {
   </style>
 </head>
 
-
 <body>
   <div class="container">
     <div class="img">
@@ -68,9 +68,10 @@ if (isset($_POST["generate-pdf"])) {
     </div>
     <h2> <span class="hello">Hello</span>
       <?php
-      echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];
+        echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];
       ?>
     </h2>
+
     <?php
     if (isset($_SESSION["text-area"])) {
       include("textarea.php");

@@ -1,13 +1,10 @@
 body {
-  /* background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 800px; */
   height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +13,7 @@ body {
   color: white;
   font-weight: 700px;
 }
+
 .container {
   background-image: linear-gradient(to bottom right, rgb(102, 204, 248), rgba(0, 17, 255, 0.918));
   height: 400px;
@@ -29,6 +27,7 @@ body {
   box-shadow: 0px 5px 20px 0px rgba(7, 220, 220),
   1px 3px 20px 0px rgba(7, 220, 220);
 }
+
 video#bgVideo {
   position: absolute;
   top: 0px;
@@ -37,3 +36,4 @@ video#bgVideo {
   min-height: 100%;
   z-index: -1; 
 }
+

@@ -1,4 +1,3 @@
-<!-- Html for Queury search page. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +9,10 @@
 </head>
 <body>
   <div class="container">
-    <form action="query-number.php" method="get">
+    <form action="index.php" method="get">
       <h2>Type a number in which page you want to move</h2>
       <input type="search" name='q' placeholder="search-query">
     </form>
   </div>
 </body>
-
 </html>

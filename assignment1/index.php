@@ -8,11 +8,12 @@
     header('location: ../login/login.php');
   } 
 ?>
+
 <?php
-//Including the Class
-include("../classes/classes.php");
-$firstError = $lastError = "";
-$temp = 0;
+//Including the file which contains all the classes.
+  include("../classes/classes.php");
+  $firstError = $lastError = "";
+  $temp = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -37,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       color: red;
       font-size: 25px;
     }
-
     .btn-primary {
       width: 700px;
     }
@@ -80,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li class="nav-item">
           <a class="nav-link" href="../assignment1/index.php">FormWithName</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"> 
           <a class="nav-link" href="../assignment2/index.php">FormWithFile</a>
         </li>
         <li class="nav-item">
@@ -125,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($temp == 0 && $_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["firstname"] = $person->firstName;
     $_SESSION["lastname"] = $person->lastName;
-    header("location:form.php ");
+    header("location:form.php");
   }
   ?>
 
@@ -135,5 +134,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>
+

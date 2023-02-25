@@ -23,17 +23,17 @@
   </video>
   <?php session_start(); ?>
   <?php
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-  include("../classes/classes.php");
-  // Variables to show in case there will any error
-  $firstError = $lastError = "";
-  $imageError = "";
-  $phoneError = "";
-  $uploadOk = 1;
-  $temp = 0;
-  $emailError = "";
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    include("../classes/classes.php");
+    // Variables to show in case there will any error
+    $firstError = $lastError = "";
+    $imageError = "";
+    $phoneError = "";
+    $uploadOk = 1;
+    $temp = 0;
+    $emailError = "";
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Creating object for the classes
     $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -76,18 +76,22 @@
       $image->imageName = $_FILES['image']['name'];
       $image->imageSize = $_FILES['image']['size'];
       $image->imageTname = $_FILES['image']['tmp_name'];
+
       if ($image->imageSize == 0) {
         $imageError = "* This field can't be empty!";
         $uploadOk = 0;
       }
+
       elseif ($image->imageSize > 3000000) {
         $imageError = "* Sorry your file is too large";
         $uploadOk  = 0;
       }
+
       elseif ($image->imageType != "image/jpg" && $image->imageType != "image/png" && $image->imageType != "image/jpeg" && $image->imageType != "image/gif") {
         $imageError = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
       }
+
       else (move_uploaded_file($image->imageTname, "../upload-images/" . $image->imageName));
     }
 
@@ -190,7 +194,6 @@
     header("Location: form.php ");
   }
   ?>
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

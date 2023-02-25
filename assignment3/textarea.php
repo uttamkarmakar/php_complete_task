@@ -1,5 +1,6 @@
 <h1>Marks Distribution</h1>
 <link rel="stylesheet" href="../style/formstyle.css">
+
 <?php
 if (isset($_SESSION['text-area'])) {
   $sub_marks = explode("\n", $_SESSION["text-area"]);
@@ -15,6 +16,7 @@ if (isset($_SESSION['text-area'])) {
   }
 }
 ?>
+
 <table>
   <tr>
     <th>Subject</th>
