@@ -20,11 +20,11 @@
 
 <body>
   <?php
-  include("../classes/classes.php");
-  $firstError = $lastError = "";
-  $imageError = "";
-  $uploadOk = 1;
-  $temp = 0;
+    include("../classes/classes.php");
+    $firstError = $lastError = "";
+    $imageError = "";
+    $uploadOk = 1;
+    $temp = 0;
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -56,25 +56,30 @@
       $image->imageName = $_FILES['image']['name'];
       $image->imageSize = $_FILES['image']['size'];
       $image->imageTname = $_FILES['image']['tmp_name'];
+      
       if ($image->imageSize == 0) {
         $imageError = "* This field can't be empty!";
         $uploadOk = 0;
       }
+
       elseif ($image->imageSize > 3000000) {
         $imageError = "* Sorry your file is too large";
         $uploadOk  = 0;
       } 
+
       elseif ($image->imageType != "image/jpg"
-       && $image->imageType != "image/png"
-       && $image->imageType != "image/jpeg"
-       && $image->imageType != "iamge/gif") {
+        && $image->imageType != "image/png"
+        && $image->imageType != "image/jpeg"
+        && $image->imageType != "iamge/gif") {
         $imageError = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
       } 
+
       else (move_uploaded_file($image->imageTname, "../upload-images/" . $image->imageName));
     }
   }
   ?>
+
   <video id="bgVideo" autoplay loop muted plays-inline>
   <source src="../video/night-sky.mp4">
   </video>
@@ -145,8 +150,6 @@
     header("Location:form.php ");
   }
   ?>
-
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

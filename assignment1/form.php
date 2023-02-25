@@ -1,7 +1,9 @@
-<?php session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);?>
+<?php 
+  session_start();
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +21,8 @@ error_reporting(E_ALL);?>
     <h2> <span class="hello">Hello</span>
       <?php
       echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];
-      // session_destroy();
       ?>
     </h2>
   </div>
 </body>
-
 </html>

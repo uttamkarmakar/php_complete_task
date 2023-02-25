@@ -6,14 +6,21 @@ class details {
   /**
    * Variables for firstname and lastname.
    * @var string $firstName.
+   *  Stores the firstname.  
    * @var string $lastName.
+   *  Stores the lastname.
    */
+
   public $firstName = "";
   public $lastName = "";
   /**
    * Constructor for the class details.
    * @param string $firstName
+   *  Passing this string to initialze firstname
+   *  
    * @param string $lastName
+   *  Passing this string to initialze lastname
+   *  
    * Setting the value to the object in the constructor.
    */
   function __construct(string $firstName,string $lastName) {
@@ -171,3 +178,4 @@ class GetEmail {
     }
   }
 }
+

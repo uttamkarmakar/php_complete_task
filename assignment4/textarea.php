@@ -5,6 +5,7 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
 if (isset($_SESSION['text-area'])) {
+  
   $sub_marks = explode("\n", $_SESSION["text-area"]);
   $marks = array();
   foreach ($sub_marks as $value) {

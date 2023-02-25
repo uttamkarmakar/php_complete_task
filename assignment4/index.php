@@ -77,16 +77,20 @@
       $image->imageName = $_FILES['image']['name'];
       $image->imageSize = $_FILES['image']['size'];
       $image->imageTname = $_FILES['image']['tmp_name'];
+
       if ($image->imageSize == 0) {
         $imageError = "* This field can't be empty!";
         $uploadOk = 0;
-      } elseif ($image->imageSize > 3000000) {
+      } 
+      elseif ($image->imageSize > 3000000) {
         $imageError = "* Sorry your file is too large";
         $uploadOk  = 0;
-      } elseif ($image->imageType != "image/jpg" && $image->imageType != "image/png" && $image->imageType != "image/jpeg" && $image->imageType != "image/gif") {
+      } 
+      elseif ($image->imageType != "image/jpg" && $image->imageType != "image/png" && $image->imageType != "image/jpeg" && $image->imageType != "image/gif") {
         $imageError = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
-      } else (move_uploaded_file($image->imageTname, "../upload-images/" . $image->imageName));
+      } 
+      else (move_uploaded_file($image->imageTname, "../upload-images/" . $image->imageName));
     }
 
     if (isset($_POST['email'])) {
@@ -104,8 +108,6 @@
     }
   }
 
-
-  // 
   ?>
   <!-- Navigaation bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -175,6 +177,7 @@
   </div>
 
   <?php
+
   // Checking all the conditions are satisfied or not,if satisfied then move to the output page
   if ($temp == 0 && $uploadOk == 1 && $_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["firstname"] = $person->firstName;
@@ -184,7 +187,6 @@
     header("Location: form.php ");
   }
   ?>
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

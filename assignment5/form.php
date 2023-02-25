@@ -1,7 +1,8 @@
 <?php
-  //Code for the output from the form.
+  //Generating PDF of the output form.
   session_start();
 ?>
+
 <?php
   if (isset($_POST["generate-pdf"])) {
   require("../fpdf/fpdf.php");
@@ -43,10 +44,7 @@
     }
   }
   $file = time() . '.pdf';
-  // $pdf->Output($file,'D');
   $pdf->Output($file, 'I');
-  // $pdf->Output($file,'O');
-  // $pdf->Output();
 }
 ?>
 <!DOCTYPE html>
@@ -78,12 +76,9 @@
       <img src="../upload-images/<?php echo $_SESSION["image"]; ?>" alt="jeee">
     </div>
     <h2> <span class="hello">Hello</span>
-      <?php
-      echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];
-
-      // session_destroy();
-      ?>
+      <?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"]; ?>
     </h2>
+
     <?php
     if (isset($_SESSION["text-area"])) {
       include("textarea.php");
@@ -105,9 +100,5 @@
     </form>
   </div>
 </body>
-
-<?php
-// session_destroy();
-?>
 
 </html>

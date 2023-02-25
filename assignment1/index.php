@@ -8,11 +8,12 @@
     header('location: ../login/login.php');
   } 
 ?>
+
 <?php
-//Including the Class
-include("../classes/classes.php");
-$firstError = $lastError = "";
-$temp = 0;
+//Including the file which contains all the classes.
+  include("../classes/classes.php");
+  $firstError = $lastError = "";
+  $temp = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $person = new details($_POST["firstname"], $_POST["lastname"]);
@@ -53,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       color: red;
       font-size: 25px;
     }
-
     .btn-primary {
       width: 700px;
     }
@@ -135,3 +135,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
