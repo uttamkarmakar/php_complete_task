@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Creating class to create object for firstname and lastname
  */
